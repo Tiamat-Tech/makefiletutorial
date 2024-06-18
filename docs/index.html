@@ -760,6 +760,7 @@ CFLAGS = -g <span class="hljs-comment"># Flag for implicit rules. Turn on debug 
 <span class="hljs-section">all.c:</span>
 	echo <span class="hljs-string">"int main() { return 0; }"</span> &gt; all.c
 
+<span class="hljs-comment"># Note: all.c does not use this rule because Make prioritizes more specific matches when there is more than one match.</span>
 <span class="hljs-section">%.c:</span>
 	touch <span class="hljs-variable">$@</span>
 
