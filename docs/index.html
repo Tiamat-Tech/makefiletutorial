@@ -682,6 +682,9 @@ thing_right := <span class="hljs-variable">$(<span class="hljs-built_in">wildcar
 	<span class="hljs-comment"># Outputs all prerequisites</span>
 	echo <span class="hljs-variable">$^</span>
 
+	<span class="hljs-comment"># Outputs the first prerequisite</span>
+	echo <span class="hljs-variable">$&lt;</span>
+
 	touch hey
 
 <span class="hljs-section">one:</span>

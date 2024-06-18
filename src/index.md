@@ -308,6 +308,9 @@ hey: one two
 	# Outputs all prerequisites
 	echo $^
 
+	# Outputs the first prerequisite
+	echo $<
+
 	touch hey
 
 one:
