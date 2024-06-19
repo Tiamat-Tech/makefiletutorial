@@ -340,7 +340,7 @@ The important variables used by implicit rules are:
 - `CPPFLAGS`: Extra flags to give to the C preprocessor
 - `LDFLAGS`: Extra flags to give to compilers when they are supposed to invoke the linker
 
-Let's see how we can now build a C program without ever explicitly telling Make how to do the compililation:
+Let's see how we can now build a C program without ever explicitly telling Make how to do the compilation:
 ```makefile
 CC = gcc # Flag for implicit rules
 CFLAGS = -g # Flag for implicit rules. Turn on debug info
