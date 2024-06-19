@@ -358,7 +358,7 @@ clean:
 
 ## Static Pattern Rules
 <!--  (Section 4.10) -->
-Static pattern rules are another way to write less in a Makefile, but I'd say are more useful and a bit less "magic". Here's their syntax:
+Static pattern rules are another way to write less in a Makefile. Here's their syntax:
 ```makefile
 targets...: target-pattern: prereq-patterns ...
    commands
@@ -410,7 +410,7 @@ clean:
 
 ## Static Pattern Rules and Filter
 <!--  (Section 4.10) -->
-While I introduce functions later on, I'll foreshadow what you can do with them. The `filter` function can be used in Static pattern rules to match the correct files. In this example, I made up the `.raw` and `.result` extensions.
+While I introduce the [filter function](#the-filter-function) later on, it's common to use in static pattern rules, so I'll mention that here. The `filter` function can be used in Static pattern rules to match the correct files. In this example, I made up the `.raw` and `.result` extensions.
 ```makefile
 obj_files = foo.result bar.o lose.o
 src_files = foo.raw bar.c lose.c
@@ -433,6 +433,7 @@ $(filter %.result,$(obj_files)): %.result: %.raw
 clean:
 	rm -f $(src_files)
 ```
+
 
 
 ## Pattern Rules
@@ -838,7 +839,7 @@ endif
 <!--  (Section 8.1) -->
 *Functions* are mainly just for text processing. Call functions with `$(fn, arguments)` or `${fn, arguments}`. Make has a decent amount of [builtin functions](https://www.gnu.org/software/make/manual/html_node/Functions.html).
 ```makefile
-bar := ${subst not,totally, "I am not superman"}
+bar := ${subst not,"totally", "I am not superman"}
 all: 
 	@echo $(bar)
 
@@ -862,7 +863,7 @@ comma := ,
 empty:=
 space := $(empty) $(empty)
 foo := a b c
-bar := $(subst $(space), $(comma) , $(foo))
+bar := $(subst $(space), $(comma) , $(foo)) # Watch out!
 
 all: 
 	# Output is ", a , b , c". Notice the spaces introduced
@@ -945,6 +946,27 @@ shell - This calls the shell, but it replaces newlines with spaces!
 all: 
 	@echo $(shell ls -la) # Very ugly because the newlines are gone!
 ```
+
+
+## The filter function
+
+The `filter` function is used to select certain elements from a list that match a specific pattern. For example, this will select all elements in `obj_files` that end with `.o`.
+
+```makefile
+obj_files = foo.result bar.o lose.o
+filtered_files = $(filter %.o,$(obj_files))
+
+all:
+	@echo $(filtered_files)
+```
+
+Filter can also be used in more complex ways:
+
+1. **Filtering multiple patterns**: You can filter multiple patterns at once. For example, `$(filter %.c %.h, $(files))` will select all `.c` and `.h` files from the files list.
+
+1. **Negation**: If you want to select all elements that do not match a pattern, you can use `filter-out`. For example, `$(filter-out %.h, $(files))` will select all files that are not `.h` files.
+
+1. **Nested filter**: You can nest filter functions to apply multiple filters. For example, `$(filter %.o, $(filter-out test%, $(objects)))` will select all object files that end with `.o` but don't start with `test`.
 
 # Other Features
 ## Include Makefiles
