@@ -18,448 +18,573 @@
     <meta property="og:description" content="Makefile Tutorial by Example">
     <meta property="og:url" content="https://makefiletutorial.com">
     <meta property="og:site_name" content="Makefile Tutorial">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 
 
-<body>
+                <body>
 
-    <div id='header'>
-        <div class='header-inside'>
-            <div class='title-left'>
-                <div class='title-wrapper'>
-                    <div class='title'>Learn Makefiles</div>
-                    <div class='subtitle'>With the tastiest examples</div>
-                </div>
+                    <div id='header'>
+                        <div class='header-inside'>
+                            <div class='title-left'>
+                                <div class='title-wrapper'>
+                                    <div class='title-wrapper2'>
+                                        <div class='title'>Learn Makefiles</div>
+                                        <div class='subtitle'>With the tastiest examples</div>
+                                    </div>
+                                </div>
 
-                <div class='intro-buttons'>
-                    <a href='#getting-started'>Start the Tutorial</a>
-                    <a href='#makefile-cookbook'>Makefile Cookbook</a>
-                </div>
-                <div class='social-buttons'>
-                    <a href='https://github.com/theicfire/makefiletutorial'><img src='/assets/github.png' /></a>
-                    <a href='https://twitter.com/chaselambda'><img src='/assets/twitter.png' /></a>
-                    <span class='github-stars'><a class="github-button"
-                            href="https://github.com/theicfire/makefiletutorial" data-icon="octicon-star"
-                            data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a></span>
-                </div>
-            </div>
-            <img class='title-pic' src='/assets/pie_ingredients.png' />
-        </div>
-    </div>
-    <div class='body-wrapper'>
-        <div id="left">
-            <div class="sidebar-header">
-                <div class='sidebar-title'><a href='#top'>Makefile Tutorial</a></div>
-                <div class='social-buttons'>
-                    <a href='https://github.com/theicfire/makefiletutorial'><img src='/assets/github.png' /></a>
-                    <a href='https://twitter.com/chaselambda'><img src='/assets/twitter.png' /></a>
-                    <span class='github-stars'><a class="github-button"
-                            href="https://github.com/theicfire/makefiletutorial" data-icon="octicon-star"
-                            data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a></span>
-                </div>
-            </div>
-            <div class='toc'>
+                                <div class='intro-buttons'>
+                                    <a href='#getting-started'>Start the Tutorial</a>
+                                    <a href='#makefile-cookbook'>Makefile Cookbook</a>
+                                </div>
+                                <div class='social-buttons'>
+                                    <a href='https://github.com/theicfire/makefiletutorial'><img
+                                            src='/assets/github.png' /></a>
+                                    <a href='https://twitter.com/chaselambda'><img src='/assets/twitter.png' /></a>
+                                    <span class='github-stars'><a class="github-button"
+                                            href="https://github.com/theicfire/makefiletutorial"
+                                            data-icon="octicon-star" data-show-count="true"
+                                            aria-label="Star ntkme/github-buttons on GitHub">Star</a></span>
+                                </div>
+                            </div>
+                            <img class='title-pic' src='/assets/pie_ingredients.png' />
+                        </div>
+                    </div>
+                    <div class='body-wrapper'>
+                        <div id="left">
+                            <div class="sidebar-header">
+                                <div class='sidebar-title'><a href='#top'>Makefile Tutorial</a></div>
+                                <div class='social-buttons'>
+                                    <a href='https://github.com/theicfire/makefiletutorial'><img
+                                            src='/assets/github.png' /></a>
+                                    <a href='https://twitter.com/chaselambda'><img src='/assets/twitter.png' /></a>
+                                    <span class='github-stars'><a class="github-button"
+                                            href="https://github.com/theicfire/makefiletutorial"
+                                            data-icon="octicon-star" data-show-count="true"
+                                            aria-label="Star ntkme/github-buttons on GitHub">Star</a></span>
+                                </div>
+                            </div>
+                            <div class='toc'>
+                                
+                                    
+    
+        <ol>
+            <li><a class="toc-item" href="#getting-started">
+                    Getting Started
+                </a>
+            </li>
+            
                 
+    
+        <ol>
+            <li><a class="toc-item" href="#why-do-makefiles-exist">
+                    Why do Makefiles exist?
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#what-alternatives-are-there-to-make">
+                    What alternatives are there to Make?
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#the-versions-and-types-of-make">
+                    The versions and types of Make
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#running-the-examples">
+                    Running the Examples
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#makefile-syntax">
+                    Makefile Syntax
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#the-essence-of-make">
+                    The essence of Make
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#more-quick-examples">
+                    More quick examples
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#make-clean">
+                    Make clean
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#variables">
+                    Variables
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                    
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#targets">
+                    Targets
+                </a>
+            </li>
+            
                 
-
-<ol>
-    <li><a class="toc-item" href="#getting-started">Getting Started</a>
-    </li>
     
-    
-
-<ol>
-    <li><a class="toc-item" href="#why-do-makefiles-exist">Why do Makefiles exist?</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#what-alternatives-are-there-to-make">What alternatives are there to Make?</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#the-versions-and-types-of-make">The versions and types of Make</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#running-the-examples">Running the Examples</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#makefile-syntax">Makefile Syntax</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#the-essence-of-make">The essence of Make</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#more-quick-examples">More quick examples</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#make-clean">Make clean</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#variables">Variables</a>
-    </li>
-    
-</ol>
-
-
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#targets">Targets</a>
-    </li>
-    
-    
-
-<ol>
-    <li><a class="toc-item" href="#the-all-target">The all target</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#multiple-targets">Multiple targets</a>
-    </li>
-    
-</ol>
-
-
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#automatic-variables-and-wildcards">Automatic Variables and Wildcards</a>
-    </li>
-    
-    
-
-<ol>
-    <li><a class="toc-item" href="#-wildcard">* Wildcard</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#-wildcard-1">% Wildcard</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#automatic-variables">Automatic Variables</a>
-    </li>
-    
-</ol>
-
-
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#fancy-rules">Fancy Rules</a>
-    </li>
-    
-    
-
-<ol>
-    <li><a class="toc-item" href="#implicit-rules">Implicit Rules</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#static-pattern-rules">Static Pattern Rules</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#static-pattern-rules-and-filter">Static Pattern Rules and Filter</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#pattern-rules">Pattern Rules</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#double-colon-rules">Double-Colon Rules</a>
-    </li>
-    
-</ol>
-
-
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#commands-and-execution">Commands and execution</a>
-    </li>
-    
-    
-
-<ol>
-    <li><a class="toc-item" href="#command-echoingsilencing">Command Echoing/Silencing</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#command-execution">Command Execution</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#default-shell">Default Shell</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#double-dollar-sign">Double dollar sign</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#error-handling-with--k--i-and--">Error handling with -k, -i, and -</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#interrupting-or-killing-make">Interrupting or killing make</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#recursive-use-of-make">Recursive use of make</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#export-environments-and-recursive-make">Export, environments, and recursive make</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#arguments-to-make">Arguments to make</a>
-    </li>
-    
-</ol>
-
-
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#variables-pt-2">Variables Pt. 2</a>
-    </li>
-    
-    
-
-<ol>
-    <li><a class="toc-item" href="#flavors-and-modification">Flavors and modification</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#command-line-arguments-and-override">Command line arguments and override</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#list-of-commands-and-define">List of commands and define</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#target-specific-variables">Target-specific variables</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#pattern-specific-variables">Pattern-specific variables</a>
-    </li>
-    
-</ol>
-
-
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#conditional-part-of-makefiles">Conditional part of Makefiles</a>
-    </li>
-    
-    
-
-<ol>
-    <li><a class="toc-item" href="#conditional-ifelse">Conditional if/else</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#check-if-a-variable-is-empty">Check if a variable is empty</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#check-if-a-variable-is-defined">Check if a variable is defined</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#makeflags">$(MAKEFLAGS)</a>
-    </li>
-    
-</ol>
-
-
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#functions">Functions</a>
-    </li>
-    
-    
-
-<ol>
-    <li><a class="toc-item" href="#first-functions">First Functions</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#string-substitution">String Substitution</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#the-foreach-function">The foreach function</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#the-if-function">The if function</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#the-call-function">The call function</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#the-shell-function">The shell function</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#the-filter-function">The filter function</a>
-    </li>
-    
-</ol>
-
-
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#other-features">Other Features</a>
-    </li>
-    
-    
-
-<ol>
-    <li><a class="toc-item" href="#include-makefiles">Include Makefiles</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#the-vpath-directive">The vpath Directive</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#multiline">Multiline</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#phony">.phony</a>
-    </li>
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#delete_on_error">.delete_on_error</a>
-    </li>
-    
-</ol>
-
-
-    
-</ol>
-
-<ol>
-    <li><a class="toc-item" href="#makefile-cookbook">Makefile Cookbook</a>
-    </li>
-    
-</ol>
-
-
+        <ol>
+            <li><a class="toc-item" href="#the-all-target">
+                    The all target
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#multiple-targets">
+                    Multiple targets
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                    
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#automatic-variables-and-wildcards">
+                    Automatic Variables and Wildcards
+                </a>
+            </li>
+            
                 
-            </div>
-        </div>
-        <div id="right">
-            <div class="content">
-                <p><b>I built this guide because I could never quite wrap my head around Makefiles.</b> They seemed awash with hidden rules and esoteric symbols, and asking simple questions didn’t yield simple answers. To solve this, I sat down for several weekends and read everything I could about Makefiles. I&#39;ve condensed the most critical knowledge into this guide. Each topic has a brief description and a self contained example that you can run yourself.</p>
+    
+        <ol>
+            <li><a class="toc-item" href="#-wildcard">
+                    * Wildcard
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#-wildcard-1">
+                    % Wildcard
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#automatic-variables">
+                    Automatic Variables
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                    
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#fancy-rules">
+                    Fancy Rules
+                </a>
+            </li>
+            
+                
+    
+        <ol>
+            <li><a class="toc-item" href="#implicit-rules">
+                    Implicit Rules
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#static-pattern-rules">
+                    Static Pattern Rules
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#static-pattern-rules-and-filter">
+                    Static Pattern Rules and Filter
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#pattern-rules">
+                    Pattern Rules
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#double-colon-rules">
+                    Double-Colon Rules
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                    
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#commands-and-execution">
+                    Commands and execution
+                </a>
+            </li>
+            
+                
+    
+        <ol>
+            <li><a class="toc-item" href="#command-echoingsilencing">
+                    Command Echoing/Silencing
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#command-execution">
+                    Command Execution
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#default-shell">
+                    Default Shell
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#double-dollar-sign">
+                    Double dollar sign
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#error-handling-with--k--i-and--">
+                    Error handling with -k, -i, and -
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#interrupting-or-killing-make">
+                    Interrupting or killing make
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#recursive-use-of-make">
+                    Recursive use of make
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#export-environments-and-recursive-make">
+                    Export, environments, and recursive make
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#arguments-to-make">
+                    Arguments to make
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                    
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#variables-pt-2">
+                    Variables Pt. 2
+                </a>
+            </li>
+            
+                
+    
+        <ol>
+            <li><a class="toc-item" href="#flavors-and-modification">
+                    Flavors and modification
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#command-line-arguments-and-override">
+                    Command line arguments and override
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#list-of-commands-and-define">
+                    List of commands and define
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#target-specific-variables">
+                    Target-specific variables
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#pattern-specific-variables">
+                    Pattern-specific variables
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                    
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#conditional-part-of-makefiles">
+                    Conditional part of Makefiles
+                </a>
+            </li>
+            
+                
+    
+        <ol>
+            <li><a class="toc-item" href="#conditional-ifelse">
+                    Conditional if/else
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#check-if-a-variable-is-empty">
+                    Check if a variable is empty
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#check-if-a-variable-is-defined">
+                    Check if a variable is defined
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#makeflags">
+                    $(MAKEFLAGS)
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                    
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#functions">
+                    Functions
+                </a>
+            </li>
+            
+                
+    
+        <ol>
+            <li><a class="toc-item" href="#first-functions">
+                    First Functions
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#string-substitution">
+                    String Substitution
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#the-foreach-function">
+                    The foreach function
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#the-if-function">
+                    The if function
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#the-call-function">
+                    The call function
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#the-shell-function">
+                    The shell function
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#the-filter-function">
+                    The filter function
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                    
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#other-features">
+                    Other Features
+                </a>
+            </li>
+            
+                
+    
+        <ol>
+            <li><a class="toc-item" href="#include-makefiles">
+                    Include Makefiles
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#the-vpath-directive">
+                    The vpath Directive
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#multiline">
+                    Multiline
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#phony">
+                    .phony
+                </a>
+            </li>
+            
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#delete_on_error">
+                    .delete_on_error
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                    
+        </ol>
+        
+        <ol>
+            <li><a class="toc-item" href="#makefile-cookbook">
+                    Makefile Cookbook
+                </a>
+            </li>
+            
+        </ol>
+        
+            
+                                        
+                            </div>
+                        </div>
+                        <div id="right">
+                            <div class="content">
+                                <p><b>I built this guide because I could never quite wrap my head around Makefiles.</b> They seemed awash with hidden rules and esoteric symbols, and asking simple questions didn’t yield simple answers. To solve this, I sat down for several weekends and read everything I could about Makefiles. I&#39;ve condensed the most critical knowledge into this guide. Each topic has a brief description and a self contained example that you can run yourself.</p>
 <p>If you mostly understand Make, consider checking out the <a href="#makefile-cookbook">Makefile Cookbook</a>, which has a template for medium sized projects with ample comments about what each part of the Makefile is doing.</p>
 <p>Good luck, and I hope you are able to slay the confusing world of Makefiles!</p>
 <h1 id="getting-started">Getting Started</h1>
@@ -1354,10 +1479,10 @@ include $(sources:.c=.d)
 ```
 -->
 
-            </div>
-        </div>
-    </div>
+                            </div>
+                        </div>
+                    </div>
 
-</body>
+                </body>
 
 </html>
