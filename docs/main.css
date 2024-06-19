@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
   tab-size: 2;
+  min-width: 320px;
 }
 
 #left {
@@ -99,6 +100,12 @@ body {
   justify-content: center;
 }
 
+@media (max-width: 480px) {
+  #header .header-inside {
+    display: block;
+  }
+}
+
 #header .title-left {
   display: flex;
   flex-direction: column;
@@ -125,7 +132,7 @@ body {
 
 @media (max-width: 480px) {
   #header .title-wrapper .title {
-    font-size: 30px;
+    font-size: 45px;
   }
 }
 
@@ -135,7 +142,8 @@ body {
 
 @media (max-width: 480px) {
   #header .title-wrapper .subtitle {
-    font-size: 16px;
+    font-size: 20px;
+    margin-bottom: 16px;
   }
 }
 
@@ -148,7 +156,18 @@ body {
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
-  width: 436px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  #header .intro-buttons {
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+}
+
+#header .intro-buttons a:first-child {
+  margin-right: 16px;
 }
 
 #header .intro-buttons a {
@@ -161,6 +180,12 @@ body {
   border-radius: 8px;
   cursor: pointer;
   margin: 20px 0px;
+}
+
+@media (max-width: 480px) {
+  #header .intro-buttons a {
+    margin: 0 16px 8px 16px;
+  }
 }
 
 #header .intro-buttons a:hover {

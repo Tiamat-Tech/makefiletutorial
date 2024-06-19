@@ -7,6 +7,7 @@ $mobile-phone-max: 480px;
 html {
   scroll-behavior: smooth;
   tab-size: 2;
+  min-width: 320px;
 }
 
 #left {
@@ -101,6 +102,9 @@ body {
   .header-inside {
     display: flex;
     justify-content: center;
+    @media (max-width: $mobile-phone-max) {
+      display: block;
+    }
   }
   .title-left {
     display: flex;
@@ -121,13 +125,14 @@ body {
     .title {
       font-size: 60px;
       @media (max-width: $mobile-phone-max) {
-        font-size: 30px;
+        font-size: 45px;
       }
     }
     .subtitle {
       font-size: 30px;
       @media (max-width: $mobile-phone-max) {
-        font-size: 16px;
+        font-size: 20px;
+        margin-bottom: 16px;
       }
     }
   }
@@ -139,9 +144,18 @@ body {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
-    width: 436px;
-    // margin-top: 32px;
+    text-align: center;
+    @media (max-width: $mobile-phone-max) {
+      flex-direction: column;
+      margin-bottom: 8px;
+    }
+    a:first-child {
+      margin-right: 16px;
+    }
     a {
+      @media (max-width: $mobile-phone-max) {
+        margin: 0 16px 8px 16px;
+      }
       display: inline-block;
       background-color: #2aa198;
       // background-color: #AD00FF;
