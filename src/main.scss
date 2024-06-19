@@ -275,6 +275,9 @@ pre code {
   border-radius: 8px;
   font-size: 16px;
   padding: 0px;
+  @media (max-width: $mobile-phone-max) {
+    font-size: 12px;
+  }
 }
 
 .center {

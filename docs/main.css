@@ -311,6 +311,12 @@ pre code {
   padding: 0px;
 }
 
+@media (max-width: 480px) {
+  pre code {
+    font-size: 12px;
+  }
+}
+
 .center {
   display: flex;
   justify-content: center;
